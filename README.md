@@ -2,100 +2,57 @@
 this app is developed using the ionic framework 
 
 
+Steps for Creating and Configuring the Preprod Environment in Unqork
+1. Creating the Preprod Environment in Unqork
+1.1 Access the Admin Console:
+  - Log in to Unqork and navigate to the Admin Console.
+1.2 Add a New Environment:
+  - Go to the Environments section and select Add Environment.
+  - Name the environment as Preprod.
+  - Specify the environment type (e.g., Performance Testing/Preprod).
+1.3 Set the Base URL:
+  - Assign the URL for the Preprod environment (e.g., https://preprod.unqork.companyname.com).
+2. Configuring Required Connections in Preprod
+2.1 Google Analytics
+- Obtain the tracking ID for Google Analytics for the Preprod environment.
+- Add the tracking ID to the relevant application configuration in Unqork.
+- Verify event tracking works as expected in Preprod.
+2.2 SendGrid
+- Obtain the API key for the Preprod SendGrid instance.
+- Go to Services > Integrations in Unqork and configure the SendGrid service with the key.
+- Test email notifications from the Preprod environment.
+2.3 Glia
+- Update the endpoint to the Preprod Glia environment URL.
+- Ensure chat and customer interaction workflows are functional.
+2.4 Okta
+- Set up the Preprod Okta integration with the appropriate authentication credentials.
+- Update the SAML/SSO settings in the Preprod environment.
+- Validate user login and session management.
+2.5 Dynatrace
+- Configure Dynatrace monitoring for the Preprod environment.
+- Add the Dynatrace monitoring script or API to your Unqork configuration.
+- Verify that application performance metrics are captured in Preprod.
+2.6 TD and Canada Post
+- Configure the APIs for TD and Canada Post.
+- Update the credentials and endpoints for Preprod usage.
+- Test the integration with mock data or staging resources provided by the respective services.
+2.7 Enterprise Docustore
+- Connect the Enterprise Docustore to the Preprod environment.
+- Verify file uploads, storage, and retrieval functionality.
+2.8 Duo Salesforce (SF EEPPerf)
+- Use the EEPPerf Salesforce environment URL and API keys.
+- Add integration details to Preprod using API Services in Unqork.
+- Confirm data exchange between Unqork and Salesforce Preprod.
+2.9 Guidewire
+- Using SIT4C temporarily, configure Guidewire with the SIT4C environment for now.
+- Plan to switch to GW Perf1C after March 10 as specified.
+- Validate insurance-related workflows with Guidewire SIT4C.
+3. Validation and Testing
+After configuring all integrations:
+- Perform end-to-end testing in the Preprod environment.
+- Validate each integration’s functionality, ensuring seamless communication between systems.
+- Fix any issues or errors identified during the testing phase.
 
-Document Title:
-Setting Up Integrations in Unqork EEP Preprod/Performance Environment
-
-Environment Details:
-	•	Target Environment: EEP Preprod/Performance
-	•	Deadline: February 3rd
-	•	Required Integrations:
-	1.	Google Analytics
-	2.	SendGrid
-	3.	Glia
-	4.	Okta
-	5.	Dynatrace
-	6.	TD
-	7.	Canada Post
-	8.	Enterprise Docustore
-	9.	Duuo Salesforce (SF EEPPerf)
-
-General Steps for Integration Setup:
-	1.	Access Integration Administration:
-	•	Log in to the Unqork Designer Platform.
-	•	Navigate to the Settings menu and select Administration.
-	•	Under Integration, choose Integration Administration.  ￼
-	2.	Determine Integration Method:
-	•	Services Administration: Suitable for standard authentication integrations.
-	•	Integration Gateway: Ideal for complex integrations, including database connections and messaging queues.  ￼
-	3.	Configure Each Integration:
-	•	Google Analytics:
-	•	Authentication: Typically uses OAuth 2.0.
-	•	Steps:
-	•	In Services Administration, create a new service titled “Google Analytics”.
-	•	Set the service protocol and host to the Google Analytics API endpoint.
-	•	Configure OAuth 2.0 authentication with your client credentials.
-	•	Reference: Unqork External APIs Documentation
-	•	SendGrid:
-	•	Authentication: API Key.
-	•	Steps:
-	•	In Services Administration, create a new service titled “SendGrid”.
-	•	Set the service protocol and host to SendGrid’s API endpoint.
-	•	Use the API Key for authentication.
-	•	Reference: Unqork External APIs Documentation
-	•	Glia:
-	•	Authentication: Depends on Glia’s API specifications.
-	•	Steps:
-	•	In Services Administration, create a new service titled “Glia”.
-	•	Configure according to Glia’s API documentation.
-	•	Okta:
-	•	Authentication: OAuth 2.0 or API Token.
-	•	Steps:
-	•	In Services Administration, create a new service titled “Okta”.
-	•	Set the service protocol and host to Okta’s API endpoint.
-	•	Configure the appropriate authentication method.
-	•	Reference: Unqork External APIs Documentation
-	•	Dynatrace:
-	•	Authentication: API Token.
-	•	Steps:
-	•	In Services Administration, create a new service titled “Dynatrace”.
-	•	Set the service protocol and host to Dynatrace’s API endpoint.
-	•	Use the API Token for authentication.
-	•	Reference: Unqork External APIs Documentation
-	•	TD:
-	•	Authentication: Depends on TD’s API specifications.
-	•	Steps:
-	•	In Services Administration, create a new service titled “TD”.
-	•	Configure according to TD’s API documentation.
-	•	Canada Post:
-	•	Authentication: Specific to Canada Post.
-	•	Steps:
-	•	In Services Administration, create a new service titled “Canada Post”.
-	•	Set the service protocol and host to Canada Post’s API endpoint.
-	•	Configure the required authentication method.
-	•	Reference: Unqork External APIs Documentation
-	•	Enterprise Docustore:
-	•	Authentication: Depends on Enterprise Docustore’s API specifications.
-	•	Steps:
-	•	In Services Administration, create a new service titled “Enterprise Docustore”.
-	•	Configure according to Enterprise Docustore’s API documentation.
-	•	Duuo Salesforce (SF EEPPerf):
-	•	Authentication: OAuth 2.0.
-	•	Steps:
-	•	In Services Administration, create a new service titled “Salesforce”.
-	•	Set the service protocol and host to Salesforce’s API endpoint.
-	•	Configure OAuth 2.0 authentication with your client credentials.
-	•	Reference: Unqork External APIs Documentation
-	4.	Testing and Validation:
-	•	After configuring each integration, perform thorough testing to ensure successful connectivity and functionality.
-	•	Monitor logs for any errors and adjust configurations as necessary.
-	5.	Documentation:
-	•	Maintain detailed records of each integration setup, including credentials, endpoints, and any specific configurations.
-	•	Document any issues encountered during setup and their resolutions for future reference.
-
-Note: The above steps provide a general framework for setting up integrations in Unqork. For detailed instructions, refer to Unqork’s official documentation and the API documentation of each respective service.  ￼
-
-If you require further assistance or encounter specific challenges during the integration process, feel free to ask!
 
 
 
